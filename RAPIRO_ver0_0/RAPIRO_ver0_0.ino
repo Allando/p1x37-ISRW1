@@ -19,16 +19,18 @@ Servo servo[MAXSN];
 uint8_t eyes[3] = { 0, 0, 0};
 
 //Batteries { - | + }
+// +tal er udaf
+// - tal er indad
 
 // Fine angle adjustments (degrees)
-int trim[MAXSN] = { 0,  // Head yaw
-                    0,  // Waist yaw
-                    0,  // R Sholder roll
-                    0,  // R Sholder pitch
+int trim[MAXSN] = {  7,  // Head yaw
+                    -12,  // Waist yaw
+                    65,  // R Sholder roll
+                    -10,  // R Sholder pitch
                     0,  // R Hand grip
-                    0,  // L Sholder roll
-                    0,  // L Sholder pitch
-                    0,  // L Hand grip
+                    -70,  // L Sholder roll
+                    10,  // L Sholder pitch
+                    60,  // L Hand grip //Stikket sidder omvendt
                     0,  // R Foot yaw
                     0,  // R Foot pitch
                     0,  // L Foot yaw
