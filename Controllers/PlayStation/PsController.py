@@ -13,10 +13,13 @@
 #
 # Distributed under terms of the MIT license.
 
+import serial
 import os
 import pprint
 import pygame
 
+ser = serial.Serial('/dev/tty.usbserial', 9600)
+ser.write(b'5')
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -64,7 +67,8 @@ class PS4Controller(object):
                 # Insert your code on what you would like to happen for each event here!
                 # In the current setup, I have the state simply printing out to the screen.
 
-                os.system('clear')
+                #os.system('clear')
+                os.system('cls')
                 pprint.pprint(self.button_data)
                 pprint.pprint(self.axis_data)
                 pprint.pprint(self.hat_data)
