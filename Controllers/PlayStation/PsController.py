@@ -13,13 +13,11 @@
 #
 # Distributed under terms of the MIT license.
 
-import serial
+
 import os
 import pprint
 import pygame
 
-ser = serial.Serial('/dev/tty.usbserial', 9600)
-ser.write(b'5')
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
