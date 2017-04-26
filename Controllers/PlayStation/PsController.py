@@ -73,9 +73,9 @@ class PS4Controller(object):
                 else:
                     os.system('cls')
 
-                pprint.pprint(self.button_data)    # Buttons
-                # pprint.pprint(self.axis_data)      # Analogue sticks
-                # pprint.pprint(self.hat_data)       # D-Pad
+                # pprint.pprint(self.button_data)    # Buttons
+                pprint.pprint(self.axis_data)      # Analogue sticks
+                #pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":

@@ -1,7 +1,19 @@
 #! /usr/bin/env python3
 """
 Okay, here is the deal!!
-
+    {0: False,    CROSS
+     1: False,    CIRCLE
+     2: False,    TRIANGLE
+     3: False,    SQUARE
+     4: False,    L1
+     5: False,    R1
+     6: False,    L2
+     7: False,    R2
+     8: False,    UNKNOWN COMMAND
+     9: False,    UNKNOWN COMMAND
+     10: False,   PS Button / Touch Pad button
+     11: False,   L3
+     12: False}   R3
 """
 
 def no_action():
