@@ -15,9 +15,10 @@
 
 
 import os
+import platform
 import pprint
 import pygame
-
+import time
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -65,14 +66,20 @@ class PS4Controller(object):
                 # Insert your code on what you would like to happen for each event here!
                 # In the current setup, I have the state simply printing out to the screen.
 
-                #os.system('clear')
-                os.system('cls')
-                pprint.pprint(self.button_data)
-                pprint.pprint(self.axis_data)
-                pprint.pprint(self.hat_data)
+                # if self.button_data == {}
+
+                if platform.system() == "Linux":
+                    os.system('clear')
+                else:
+                    os.system('cls')
+
+                pprint.pprint(self.button_data)    # Buttons
+                # pprint.pprint(self.axis_data)      # Analogue sticks
+                # pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":
     ps4 = PS4Controller()
     ps4.init()
     ps4.listen()
+
