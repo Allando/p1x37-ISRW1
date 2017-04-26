@@ -18,7 +18,13 @@ import os
 import platform
 import pprint
 import pygame
-import time
+
+"""
+Loading from other files in directory
+"""
+from .AnalogControlPatterns import analog as ACP
+from .ButtonControlPatterns import button as BCP
+from .DPadControlPatterns import dPad as DCP
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -27,6 +33,8 @@ class PS4Controller(object):
     axis_data = None
     button_data = None
     hat_data = None
+
+    command = ""
 
     def init(self):
         """Initialize the joystick components"""
@@ -66,16 +74,96 @@ class PS4Controller(object):
                 # Insert your code on what you would like to happen for each event here!
                 # In the current setup, I have the state simply printing out to the screen.
 
-                # if self.button_data == {}
+                """
+                BUTTONS
+                """
+                if self.button_data == BCP.no_action():
+                    return
+                elif self.button_data == BCP.cross():
+                    command = "!M6"
+                    return command
+                elif self.button_data == BCP.circle():
+                    command = "!M5"
+                    return command
+                elif self.button_data == BCP.triangle():
+                    command = "!M7"
+                    return command
+                elif self.button_data == BCP.square():
+                    command = "!M8"
+                    return command
+                elif self.button_data == BCP.l1:
+                    command = "!M9"
+                    return command
+                elif self.button_data == BCP.r1:
+                    return
+                elif self.button_data == BCP.l2:
+                    return
+                elif self.button_data == BCP.r2:
+                    return
+                elif self.button_data == BCP.unknown_command_1():
+                    return
+                elif self.button_data == BCP.unknown_command_2():
+                    return
+                elif self.button_data == BCP.ps_and_touch_button():
+                    command = "!M0"
+                    return command
+                elif self.button_data == BCP.l3:
+                    return
+                elif self.button_data == BCP.r3:
+                    return
+
+                """
+                ANALOG
+                """
+                if self.axis_data == ACP.no_action():
+                    return
+                elif self.axis_data == ACP.left_stick_up():
+                    command = "!M1"
+                    return command
+                elif self.axis_data == ACP.left_stick_down():
+                    command = "!M2"
+                    return command
+                elif self.axis_data == ACP.left_stick_left():
+                    command = "!M4"
+                    return command
+                elif self.axis_data == ACP.left_stick_right():
+                    command = "!M3"
+                    return command
+                elif self.axis_data == ACP.unknown_action_1():
+                    return
+                elif self.axis_data == ACP.unknown_action_2():
+                    return
+                elif self.axis_data == ACP.right_stick_up():
+                    return
+                elif self.axis_data == ACP.right_stick_down():
+                    return
+                elif self.axis_data == ACP.right_stick_left():
+                    return
+                elif self.axis_data == ACP.right_stick_right():
+                    return
+
+                """
+                D-PAD
+                """
+                if self.hat_data == DCP.no_action():
+                    return
+                elif self.hat_data == DCP.up():
+                    return
+                elif self.hat_data == DCP.down():
+                    return
+                elif self.hat_data == DCP.left():
+                    return
+                elif self.hat_data == DCP.right():
+                    return
 
                 if platform.system() == "Linux":
                     os.system('clear')
                 else:
                     os.system('cls')
 
-                # pprint.pprint(self.button_data)    # Buttons
-                pprint.pprint(self.axis_data)      # Analogue sticks
-                #pprint.pprint(self.hat_data)       # D-Pad
+                pprint.pprint(self.button_data)    # Buttons
+                pprint.pprint(self.axis_data)      # Analog sticks
+                pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":

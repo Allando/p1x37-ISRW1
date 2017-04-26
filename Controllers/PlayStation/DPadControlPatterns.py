@@ -6,22 +6,18 @@ Ok, peebs!
 """
 
 
-def no_action():
-    {0: (0,0)}
+class dPad:
+    def no_action(self):
+        {0: (0,0)}
 
+    def up(self):
+        {0: (0, 1)}
 
-def up():
-    {0: (0, 1)}
+    def down(self):
+        {0: (0, -1)}
 
+    def left(self):
+        {0: (-1, 0)}
 
-def down():
-    {0: (0, -1)}
-
-
-def left():
-    {0: (-1, 0)}
-
-
-def right():
-    {0: (1, 0)}
-
+    def right(self):
+        {0: (1, 0)}
