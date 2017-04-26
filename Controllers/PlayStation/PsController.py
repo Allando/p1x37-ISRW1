@@ -18,6 +18,7 @@ import os
 import platform
 import pprint
 import pygame
+import socket
 
 """
 Loading from other files in directory
@@ -44,7 +45,7 @@ class PS4Controller(object):
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
 
-    def listen(self):
+    def listen(self, command=None):
         """Listen for events to happen"""
 
         if not self.axis_data:
@@ -73,6 +74,20 @@ class PS4Controller(object):
 
                 # Insert your code on what you would like to happen for each event here!
                 # In the current setup, I have the state simply printing out to the screen.
+
+                """
+                command	        action	                    eye color
+                #M0	            Stop	                    Blue
+                #M1	            Move Forward	            Blue
+                #M2	            Move Back	                Blue
+                #M3	            Turn right	                Blue
+                #M4	            Turn left	                Blue
+                #M5	            Wave both hands	            Green
+                #M6	            Wave right hands	        Yellow
+                #M7	            Grip both hands	            Blue
+                #M8	            Wave left hand	            Red
+                #M9	            Stretch out right hand	    Blue
+                """
 
                 """
                 BUTTONS
@@ -161,13 +176,24 @@ class PS4Controller(object):
                 else:
                     os.system('cls')
 
-                pprint.pprint(self.button_data)    # Buttons
-                pprint.pprint(self.axis_data)      # Analog sticks
-                pprint.pprint(self.hat_data)       # D-Pad
+                # pprint.pprint(self.button_data)    # Buttons
+                # pprint.pprint(self.axis_data)      # Analog sticks
+                # pprint.pprint(self.hat_data)       # D-Pad
+
+                UDP_IP = "192.168.0.102"
+                UDP_PORT = 6789
+
+                print("UDP target IP:", UDP_IP)
+                print("UDP target port:", UDP_PORT)
+                print("message:", command)
+
+                sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                sock.sendto(command.encode(), (UDP_IP, UDP_PORT))
 
 
 if __name__ == "__main__":
     ps4 = PS4Controller()
     ps4.init()
     ps4.listen()
+
 
