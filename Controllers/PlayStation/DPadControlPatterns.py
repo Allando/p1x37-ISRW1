@@ -6,7 +6,7 @@ Ok, peebs!
 """
 
 
-class dPad:
+class DPad:
     def no_action(self):
         {0: (0,0)}
 

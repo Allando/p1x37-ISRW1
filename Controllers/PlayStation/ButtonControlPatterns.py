@@ -17,7 +17,7 @@ Okay, here is the deal!!
 """
 
 
-class button:
+class Button:
     def no_action(self):
         {0: False,
          1: False,

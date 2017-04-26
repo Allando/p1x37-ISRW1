@@ -9,7 +9,8 @@ Well, lads, this is a big one!
 """
 
 
-class analog:
+class Analog:
+    @staticmethod
     def no_action(self):
         {
             0: (0.0),
@@ -19,6 +20,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def left_stick_up(self):
         {
             0: (0.0),
@@ -28,6 +30,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def left_stick_down(self):
         {
             0: (0.0),
@@ -37,6 +40,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def left_stick_left(self):
         {
             0: (-1.0),
@@ -46,6 +50,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def left_stick_right(self):
         {
             0: (1.0),
@@ -55,6 +60,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def unknown_action_1(self):
         {
             0: (0.0),
@@ -64,6 +70,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def unknown_action_2(self):
         {
             0: (0.0),
@@ -73,6 +80,7 @@ class analog:
             4: (0.0)
         }
 
+    @staticmethod
     def right_stick_up(self):
         {
             0: (0.0),
@@ -82,6 +90,7 @@ class analog:
             4: (-1.0)
         }
 
+    @staticmethod
     def right_stick_down(self):
         {
             0: (0.0),
@@ -91,6 +100,7 @@ class analog:
             4: (1.0)
         }
 
+    @staticmethod
     def right_stick_left(self):
         {
             0: (0.0),
@@ -100,7 +110,8 @@ class analog:
             4: (0.0)
         }
 
-    def right_stick_right(self):
+    @staticmethod
+    def right_stick_right():
         {
             0: (1.0),
             1: (0.0),
@@ -108,4 +119,5 @@ class analog:
             3: (1.0),
             4: (0.0)
         }
+
 

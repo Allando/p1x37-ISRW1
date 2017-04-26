@@ -23,9 +23,9 @@ import socket
 """
 Loading from other files in directory
 """
-from .AnalogControlPatterns import analog as ACP
-from .ButtonControlPatterns import button as BCP
-from .DPadControlPatterns import dPad as DCP
+from .AnalogControlPatterns import Analog as ACP
+from .ButtonControlPatterns import Button as BCP
+from .DPadControlPatterns import DPad as DCP
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -176,19 +176,10 @@ class PS4Controller(object):
                 else:
                     os.system('cls')
 
-                # pprint.pprint(self.button_data)    # Buttons
-                # pprint.pprint(self.axis_data)      # Analog sticks
-                # pprint.pprint(self.hat_data)       # D-Pad
+                pprint.pprint(self.button_data)    # Buttons
+                pprint.pprint(self.axis_data)      # Analog sticks
+                pprint.pprint(self.hat_data)       # D-Pad
 
-                UDP_IP = "192.168.0.102"
-                UDP_PORT = 6789
-
-                print("UDP target IP:", UDP_IP)
-                print("UDP target port:", UDP_PORT)
-                print("message:", command)
-
-                sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                sock.sendto(command.encode(), (UDP_IP, UDP_PORT))
 
 
 if __name__ == "__main__":
