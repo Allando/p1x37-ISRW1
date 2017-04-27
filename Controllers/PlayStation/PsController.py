@@ -46,7 +46,7 @@ class PS4Controller(object):
         self.controller = pygame.joystick.Joystick(0)
         self.controller.init()
 
-    def listen(self, command=None):
+    def listen(self):
         """Listen for events to happen"""
 
         if not self.axis_data:
@@ -102,89 +102,89 @@ class PS4Controller(object):
                 """
                 BUTTONS
                 """
-                if self.button_data == BCP.cross:
+                if self.button_data[0]:
                     command = "!M6"
                     print(command)
-                elif self.button_data == BCP.circle:
+                elif self.button_data[1]:
                     command = "!M5"
                     print(command)
-                elif self.button_data == BCP.triangle:
+                elif self.button_data[2]:
                     command = "!M7"
                     print(command)
-                elif self.button_data == BCP.square:
+                elif self.button_data[3]:
                     command = "!M8"
                     print(command)
-                elif self.button_data == BCP.l1:
+                elif self.button_data[4]:
                     command = "!M9"
                     print(command)
-                elif self.button_data == BCP.r1:
+                elif self.button_data[5]:
                     return
-                elif self.button_data == BCP.l2:
+                elif self.button_data[6]:
                     return
-                elif self.button_data == BCP.r2:
+                elif self.button_data[7]:
                     return
-                elif self.button_data == BCP.unknown_command_1:
+                elif self.button_data[8]:
                     return
-                elif self.button_data == BCP.unknown_command_2:
+                elif self.button_data[9]:
                     return
-                elif self.button_data == BCP.ps_and_touch_button:
+                elif self.button_data[10]:
                     command = "!M0"
                     print(command)
-                elif self.button_data == BCP.l3:
+                elif self.button_data[11]:
                     return
-                elif self.button_data == BCP.r3:
+                elif self.button_data[12]:
                     return
 
                 """
                 ANALOG
                 """
-                if self.axis_data == ACP.no_action():
-                    return
-                elif self.axis_data == ACP.left_stick_up():
+                if self.axis_data[0]:
                     command = "!M1"
                     print(command)
-                elif self.axis_data == ACP.left_stick_down():
+                elif self.axis_data[2]:
                     command = "!M2"
                     print(command)
-                elif self.axis_data == ACP.left_stick_left():
+                elif self.axis_data[3]:
                     command = "!M4"
                     print(command)
-                elif self.axis_data == ACP.left_stick_right():
+                elif self.axis_data[4]:
                     command = "!M3"
                     print(command)
-                elif self.axis_data == ACP.unknown_action_1():
+                elif self.axis_data[5]:
                     return
-                elif self.axis_data == ACP.unknown_action_2():
+                elif self.axis_data[6]:
                     return
-                elif self.axis_data == ACP.right_stick_up():
+                elif self.axis_data[7]:
                     return
-                elif self.axis_data == ACP.right_stick_down():
+                elif self.axis_data[8]:
                     return
-                elif self.axis_data == ACP.right_stick_left():
+                elif self.axis_data[9]:
                     return
-                elif self.axis_data == ACP.right_stick_right():
+                elif self.axis_data[10]:
                     return
 
                 """
                 D-PAD
                 """
-                if self.hat_data == DCP.up():
+                if self.hat_data[0]:
                     return
-                elif self.hat_data == DCP.down():
+                elif self.hat_data[1]:
                     return
-                elif self.hat_data == DCP.left():
+                elif self.hat_data[2]:
                     return
-                elif self.hat_data == DCP.right():
+                elif self.hat_data[3]:
                     return
 
-                # if platform.system() == "Linux":
-                #     os.system('clear')
-                # else:
-                #     os.system('cls')
+                if platform.system() == "Linux":
+                    os.system('clear')
+                else:
+                    os.system('cls')
 
-                # pprint.pprint(self.button_data)    # Buttons
-                # pprint.pprint(self.axis_data)      # Analog sticks
-                # pprint.pprint(self.hat_data)       # D-Pad
+                # print(self.button_data)
+
+                pprint.pprint(self.button_data)    # Buttons
+                pprint.pprint(self.axis_data)      # Analog sticks
+                pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":
