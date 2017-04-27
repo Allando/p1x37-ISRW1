@@ -7,17 +7,21 @@ Ok, peebs!
 
 
 class DPad:
-    def no_action(self):
-        {0: (0,0)}
+    @staticmethod
+    def no_action():
+        return {0: (0,0)}
 
-    def up(self):
-        {0: (0, 1)}
+    @staticmethod
+    def up():
+        return {0: (0, 1)}
 
-    def down(self):
-        {0: (0, -1)}
+    @staticmethod
+    def down():
+        return {0: (0, -1)}
 
-    def left(self):
-        {0: (-1, 0)}
+    @staticmethod
+    def left():
+        return {0: (-1, 0)}
 
-    def right(self):
+    def right():
         {0: (1, 0)}

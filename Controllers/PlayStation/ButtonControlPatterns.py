@@ -18,8 +18,9 @@ Okay, here is the deal!!
 
 
 class Button:
-    def no_action(self):
-        {0: False,
+    @staticmethod
+    def no_action():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -33,8 +34,9 @@ class Button:
          11: False,
          12: False}
 
-    def cross(self):
-        {0: True,
+    @staticmethod
+    def cross():
+        return {0: True,
          1: False,
          2: False,
          3: False,
@@ -48,8 +50,9 @@ class Button:
          11: False,
          12: False}
 
-    def circle(self):
-        {0: False,
+    @staticmethod
+    def circle():
+        return {0: False,
          1: True,
          2: False,
          3: False,
@@ -63,8 +66,9 @@ class Button:
          11: False,
          12: False}
 
-    def triangle(self):
-        {0: False,
+    @staticmethod
+    def triangle():
+        return {0: False,
          1: False,
          2: True,
          3: False,
@@ -78,8 +82,9 @@ class Button:
          11: False,
          12: False}
 
-    def square(self):
-        {0: False,
+    @staticmethod
+    def square():
+        return {0: False,
          1: False,
          2: False,
          3: True,
@@ -93,8 +98,9 @@ class Button:
          11: False,
          12: False}
 
-    def l1(self):
-        {0: False,
+    @staticmethod
+    def l1():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -108,8 +114,9 @@ class Button:
          11: False,
          12: False}
 
-    def r1(self):
-        {0: False,
+    @staticmethod
+    def r1():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -123,8 +130,9 @@ class Button:
          11: False,
          12: False}
 
-    def l2(self):
-        {0: False,
+    @staticmethod
+    def l2():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -138,8 +146,9 @@ class Button:
          11: False,
          12: False}
 
-    def r2(self):
-        {0: False,
+    @staticmethod
+    def r2():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -153,8 +162,9 @@ class Button:
          11: False,
          12: False}
 
-    def unknown_command_1(self):
-        {0: False,
+    @staticmethod
+    def unknown_command_1():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -168,8 +178,9 @@ class Button:
          11: False,
          12: False}
 
-    def unknown_command_2(self):
-        {0: False,
+    @staticmethod
+    def unknown_command_2():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -183,8 +194,9 @@ class Button:
          11: False,
          12: False}
 
-    def ps_and_touch_button(self):
-        {0: False,
+    @staticmethod
+    def ps_and_touch_button():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -198,8 +210,9 @@ class Button:
          11: False,
          12: False}
 
-    def l3(self):
-        {0: False,
+    @staticmethod
+    def l3():
+        return {0: False,
          1: False,
          2: False,
          3: False,
@@ -213,8 +226,9 @@ class Button:
          11: True,
          12: False}
 
-    def r3(self):
-        {0: False,
+    @staticmethod
+    def r3():
+        return {0: False,
          1: False,
          2: False,
          3: False,

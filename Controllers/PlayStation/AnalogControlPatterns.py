@@ -11,8 +11,8 @@ Well, lads, this is a big one!
 
 class Analog:
     @staticmethod
-    def no_action(self):
-        {
+    def no_action():
+        return {
             0: (0.0),
             1: (0.0),
             2: (0.0),
@@ -21,8 +21,8 @@ class Analog:
         }
 
     @staticmethod
-    def left_stick_up(self):
-        {
+    def left_stick_up():
+        return {
             0: (0.0),
             1: (-1.0),
             2: (0.0),
@@ -31,8 +31,8 @@ class Analog:
         }
 
     @staticmethod
-    def left_stick_down(self):
-        {
+    def left_stick_down():
+        return {
             0: (0.0),
             1: (1.0),
             2: (0.0),
@@ -41,8 +41,8 @@ class Analog:
         }
 
     @staticmethod
-    def left_stick_left(self):
-        {
+    def left_stick_left():
+        return {
             0: (-1.0),
             1: (0.0),
             2: (0.0),
@@ -51,8 +51,8 @@ class Analog:
         }
 
     @staticmethod
-    def left_stick_right(self):
-        {
+    def left_stick_right():
+        return {
             0: (1.0),
             1: (0.0),
             2: (0.0),
@@ -61,8 +61,8 @@ class Analog:
         }
 
     @staticmethod
-    def unknown_action_1(self):
-        {
+    def unknown_action_1():
+        return {
             0: (0.0),
             1: (0.0),
             2: (-1.0),
@@ -71,8 +71,8 @@ class Analog:
         }
 
     @staticmethod
-    def unknown_action_2(self):
-        {
+    def unknown_action_2():
+        return {
             0: (0.0),
             1: (0.0),
             2: (1.0),
@@ -81,8 +81,8 @@ class Analog:
         }
 
     @staticmethod
-    def right_stick_up(self):
-        {
+    def right_stick_up():
+        return {
             0: (0.0),
             1: (0.0),
             2: (0.0),
@@ -91,8 +91,8 @@ class Analog:
         }
 
     @staticmethod
-    def right_stick_down(self):
-        {
+    def right_stick_down():
+        return {
             0: (0.0),
             1: (1.0),
             2: (0.0),
@@ -101,8 +101,8 @@ class Analog:
         }
 
     @staticmethod
-    def right_stick_left(self):
-        {
+    def right_stick_left():
+        return {
             0: (0.0),
             1: (0.0),
             2: (0.0),
@@ -112,7 +112,7 @@ class Analog:
 
     @staticmethod
     def right_stick_right():
-        {
+        return {
             0: (1.0),
             1: (0.0),
             2: (0.0),

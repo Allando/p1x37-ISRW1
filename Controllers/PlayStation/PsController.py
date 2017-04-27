@@ -23,9 +23,10 @@ import socket
 """
 Loading from other files in directory
 """
-from .AnalogControlPatterns import Analog as ACP
-from .ButtonControlPatterns import Button as BCP
-from .DPadControlPatterns import DPad as DCP
+from PlayStation.AnalogControlPatterns import Analog as ACP
+from PlayStation.ButtonControlPatterns import Button as BCP
+from PlayStation.DPadControlPatterns import DPad as DCP
+
 
 class PS4Controller(object):
     """Class representing the PS4 controller. Pretty straightforward functionality."""
@@ -35,7 +36,7 @@ class PS4Controller(object):
     button_data = None
     hat_data = None
 
-    command = ""
+    command = "!M0"
 
     def init(self):
         """Initialize the joystick components"""
@@ -77,6 +78,7 @@ class PS4Controller(object):
 
                 """
                 command	        action	                    eye color
+                -----------------------------------------------------
                 #M0	            Stop	                    Blue
                 #M1	            Move Forward	            Blue
                 #M2	            Move Back	                Blue
@@ -90,38 +92,44 @@ class PS4Controller(object):
                 """
 
                 """
+                CONTROL DEFAULT MODE
+                """
+                conditions = self.button_data == BCP.no_action() and self.axis_data == ACP.no_action() and self.hat_data == DCP.no_action()
+                if conditions:
+                    command = "!M0"
+                    print(command)
+
+                """
                 BUTTONS
                 """
-                if self.button_data == BCP.no_action():
-                    return
-                elif self.button_data == BCP.cross():
+                if self.button_data == BCP.cross:
                     command = "!M6"
-                    return command
-                elif self.button_data == BCP.circle():
+                    print(command)
+                elif self.button_data == BCP.circle:
                     command = "!M5"
-                    return command
-                elif self.button_data == BCP.triangle():
+                    print(command)
+                elif self.button_data == BCP.triangle:
                     command = "!M7"
-                    return command
-                elif self.button_data == BCP.square():
+                    print(command)
+                elif self.button_data == BCP.square:
                     command = "!M8"
-                    return command
+                    print(command)
                 elif self.button_data == BCP.l1:
                     command = "!M9"
-                    return command
+                    print(command)
                 elif self.button_data == BCP.r1:
                     return
                 elif self.button_data == BCP.l2:
                     return
                 elif self.button_data == BCP.r2:
                     return
-                elif self.button_data == BCP.unknown_command_1():
+                elif self.button_data == BCP.unknown_command_1:
                     return
-                elif self.button_data == BCP.unknown_command_2():
+                elif self.button_data == BCP.unknown_command_2:
                     return
-                elif self.button_data == BCP.ps_and_touch_button():
+                elif self.button_data == BCP.ps_and_touch_button:
                     command = "!M0"
-                    return command
+                    print(command)
                 elif self.button_data == BCP.l3:
                     return
                 elif self.button_data == BCP.r3:
@@ -134,16 +142,16 @@ class PS4Controller(object):
                     return
                 elif self.axis_data == ACP.left_stick_up():
                     command = "!M1"
-                    return command
+                    print(command)
                 elif self.axis_data == ACP.left_stick_down():
                     command = "!M2"
-                    return command
+                    print(command)
                 elif self.axis_data == ACP.left_stick_left():
                     command = "!M4"
-                    return command
+                    print(command)
                 elif self.axis_data == ACP.left_stick_right():
                     command = "!M3"
-                    return command
+                    print(command)
                 elif self.axis_data == ACP.unknown_action_1():
                     return
                 elif self.axis_data == ACP.unknown_action_2():
@@ -160,9 +168,7 @@ class PS4Controller(object):
                 """
                 D-PAD
                 """
-                if self.hat_data == DCP.no_action():
-                    return
-                elif self.hat_data == DCP.up():
+                if self.hat_data == DCP.up():
                     return
                 elif self.hat_data == DCP.down():
                     return
@@ -171,20 +177,18 @@ class PS4Controller(object):
                 elif self.hat_data == DCP.right():
                     return
 
-                if platform.system() == "Linux":
-                    os.system('clear')
-                else:
-                    os.system('cls')
+                # if platform.system() == "Linux":
+                #     os.system('clear')
+                # else:
+                #     os.system('cls')
 
-                pprint.pprint(self.button_data)    # Buttons
-                pprint.pprint(self.axis_data)      # Analog sticks
-                pprint.pprint(self.hat_data)       # D-Pad
-
+                # pprint.pprint(self.button_data)    # Buttons
+                # pprint.pprint(self.axis_data)      # Analog sticks
+                # pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":
     ps4 = PS4Controller()
     ps4.init()
     ps4.listen()
-
 
