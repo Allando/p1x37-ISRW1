@@ -94,86 +94,105 @@ class PS4Controller(object):
                 """
                 CONTROL DEFAULT MODE
                 """
-                conditions = self.button_data == BCP.no_action() and self.axis_data == ACP.no_action() and self.hat_data == DCP.no_action()
-                if conditions:
-                    command = "!M0"
-                    print(command)
+                # conditions = self.axis_data ==  and self.hat_data == (0, 0)
+                # if conditions:
+                #     command = "!M0"
+                #     print(command)
 
                 """
                 BUTTONS
                 """
-                if self.button_data[0]:
-                    command = "!M6"
-                    print(command)
-                elif self.button_data[1]:
-                    command = "!M5"
-                    print(command)
-                elif self.button_data[2]:
-                    command = "!M7"
-                    print(command)
-                elif self.button_data[3]:
-                    command = "!M8"
-                    print(command)
-                elif self.button_data[4]:
-                    command = "!M9"
-                    print(command)
-                elif self.button_data[5]:
-                    return
-                elif self.button_data[6]:
-                    return
-                elif self.button_data[7]:
-                    return
-                elif self.button_data[8]:
-                    return
-                elif self.button_data[9]:
-                    return
-                elif self.button_data[10]:
-                    command = "!M0"
-                    print(command)
-                elif self.button_data[11]:
-                    return
-                elif self.button_data[12]:
-                    return
+                # if self.button_data[0]:  # Square
+                #     command = "!M6"
+                #     print(command)
+                # elif self.button_data[1]:  # Cross
+                #     command = "!M5"
+                #     print(command)
+                # elif self.button_data[2]:  # Circle
+                #     command = "!M7"
+                #     print(command)
+                # elif self.button_data[3]:  # Triangle
+                #     command = "!M8"
+                #     print(command)
+                # elif self.button_data[4]:  #
+                #     command = "!M9"
+                #     print(command)
+                # elif self.button_data[5]:
+                #     return
+                # elif self.button_data[6]:
+                #     return
+                # elif self.button_data[7]:
+                #     return
+                # elif self.button_data[8]:
+                #     return
+                # elif self.button_data[9]:
+                #     return
+                # elif self.button_data[10]:
+                #     command = "!M0"
+                #     print(command)
+                # elif self.button_data[11]:
+                #     return
+                # elif self.button_data[12]:
+                #     return
 
                 """
                 ANALOG
                 """
-                if self.axis_data[0]:
-                    command = "!M1"
-                    print(command)
-                elif self.axis_data[2]:
-                    command = "!M2"
-                    print(command)
-                elif self.axis_data[3]:
-                    command = "!M4"
-                    print(command)
-                elif self.axis_data[4]:
-                    command = "!M3"
-                    print(command)
-                elif self.axis_data[5]:
-                    return
-                elif self.axis_data[6]:
-                    return
-                elif self.axis_data[7]:
-                    return
-                elif self.axis_data[8]:
-                    return
-                elif self.axis_data[9]:
-                    return
-                elif self.axis_data[10]:
-                    return
+                # if self.axis_data[0] == -1.0:  # walk left
+                #     command = "!M4"
+                #     print(command)
+                # elif self.axis_data[0] == 1.0:  # walk right
+                #     command = "!M3"
+                #     print(command)
+                # if self.axis_data[1] == -1.0:  # walk forwards
+                #     command = "!M1"
+                #     print(command)
+                # elif self.axis_data[1] == 1.0:  # walk backwards
+                #     command = "!M2"
+                #     print(command)
+                # elif self.axis_data[4]:
+                #     command = "!M3"
+                #     print(command)
+                # elif self.axis_data[5]:
+                #     return
+                # elif self.axis_data[6]:
+                #     return
+                # elif self.axis_data[7]:
+                #     return
+                # elif self.axis_data[8]:
+                #     return
+                # elif self.axis_data[9]:
+                #     return
+                # elif self.axis_data[10]:
+                #     return
 
                 """
                 D-PAD
                 """
-                if self.hat_data[0]:
-                    return
-                elif self.hat_data[1]:
-                    return
-                elif self.hat_data[2]:
-                    return
-                elif self.hat_data[3]:
-                    return
+                # if self.hat_data[0] == (1, 1):
+                #     command = "D 0"
+                #     print(command)
+                # elif self.hat_data[0] == (1, 0):
+                #     command = "D 1"
+                #     print(command)
+                # elif self.hat_data[0] == (1, -1):
+                #     command = "D 2"
+                #     print(command)
+                # elif self.hat_data[0] == (0, 1):
+                #     command = "D 3"
+                #     print(command)
+                # elif self.hat_data[0] == (0, -1):
+                #     command = "D 5"
+                #     print(command)
+                # elif self.hat_data[0] == (-1, 1):
+                #     command = "D 6"
+                #     print(command)
+                # elif self.hat_data[0] == (-1, 0):
+                #     command = "D 7"
+                #     print(command)
+                # elif self.hat_data[0] == (-1, -1):
+                #     command = "D 8"
+                #     print(command)
 
                 if platform.system() == "Linux":
                     os.system('clear')
@@ -182,9 +201,9 @@ class PS4Controller(object):
 
                 # print(self.button_data)
 
-                pprint.pprint(self.button_data)    # Buttons
+                # pprint.pprint(self.button_data)    # Buttons
                 pprint.pprint(self.axis_data)      # Analog sticks
-                pprint.pprint(self.hat_data)       # D-Pad
+                # pprint.pprint(self.hat_data)       # D-Pad
 
 
 if __name__ == "__main__":
